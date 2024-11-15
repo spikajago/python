@@ -10,6 +10,7 @@ import random
 # [Joonistab 5 kujundit, igaüks juhuslikult valitud tüübiga suvalistesse kohtadesse]
 # Pärast joonistamist peaks programm pakkuma võimalust sisestada uued väärtused või väljuda programmist, jättes sisendi tühjaks.
 
+
 def viisnurk(k):
     turtle.speed(0)
     for j in range(k):
@@ -48,19 +49,30 @@ def suvaline(k):
         my_list=[viisnurk, ring, ruut]
         random.choice(my_list)(1)
 
-
-
 print("-----------Minu fancy program-----------")
-valik=int(input("1-viisnurk\n2-ring\n3-ruut\n4-suvaline\n5-lisa valik(1-4): "))
-kujunditeArv=int(input("Mitu kujundit soovid joonistada: "))
-if valik==1:
-    viisnurk(kujunditeArv)
-elif valik==2:
-    ring(kujunditeArv)
-elif valik==3:
-    ruut(kujunditeArv)
-else:
-    suvaline(kujunditeArv)
+
+loop=1
+
+while loop==1:
+    try:
+        valik=int(input("1-viisnurk\n2-ring\n3-ruut\n4-suvaline\n5-lisa valik(1-4): "))
+        kujunditeArv=int(input("Mitu kujundit soovid joonistada: "))
+    except:
+        print("game over")
+        loop=0
+        break
+    if valik=="" or kujunditeArv=="":
+        print("game over")
+        loop=0
+        break
+    if valik==1:
+        viisnurk(kujunditeArv)
+    elif valik==2:
+        ring(kujunditeArv)
+    elif valik==3:
+        ruut(kujunditeArv)
+    else:
+        suvaline(kujunditeArv)
 
 
 
