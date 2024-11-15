@@ -4,9 +4,10 @@
 import turtle
 t = turtle.Turtle()
 t.speed(0)
+screen=turtle.Screen()
 # Küsi kasutajalt numbrilist sisendit
-#nr = screen.numinput("Vanuse sisestamine", "Mis on sinu vanus?", default=20, minval=0, maxval=100)
-nr=10
+nr = int(screen.numinput("Vanuse sisestamine", "Mis on sinu vanus?", default=20, minval=0, maxval=100))
+#nr=10
 
 for i in range(nr*10):
     t.lt(90)
