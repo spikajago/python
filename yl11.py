@@ -45,8 +45,8 @@ def ruut(k):
 
 def suvaline(k):
     for i in range(k):
-        my_list=[viisnurk(1), ring(1), ruut(1)]
-        random.choice(my_list)()
+        my_list=[viisnurk, ring, ruut]
+        random.choice(my_list)(1)
 
 
 
